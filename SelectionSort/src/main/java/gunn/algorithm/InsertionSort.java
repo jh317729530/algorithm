@@ -6,7 +6,7 @@ package gunn.algorithm;
  * 较以及 N²/4 次交换。最坏情况下需要 N²/2 次比较和 N²/2 次交换,最好情况下需要 N-1
  * 次比较和 0 次交换。
  */
-public class InsertSort implements Sort {
+public class InsertionSort implements Sort {
 
     @Override
     public void sort(Comparable[] a) {
