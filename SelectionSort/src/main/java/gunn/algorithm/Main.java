@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class Main {
 
-    private static Sort sort = new InsertSort();
+    private static Sort sort = new InsertionSort();
 
     public static void main( String[] args ) {
         String a[] = {"B", "A", "E", "D", "C"};
