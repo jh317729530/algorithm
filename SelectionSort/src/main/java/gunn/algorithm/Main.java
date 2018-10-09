@@ -8,10 +8,11 @@ import java.util.Arrays;
  */
 public class Main {
 
-    private static Sort sort = new InsertionSort();
+    private static Sort sort = new ShellSort();
 
     public static void main( String[] args ) {
-        String a[] = {"B", "A", "E", "D", "C"};
+        String s = "SHELLSORTEXAMPLE";
+        String[] a = s.split("");
         System.out.println("before sort:");
         Arrays.stream(a).forEach(k->{
             System.out.printf(k + "");
