@@ -8,11 +8,12 @@ import java.util.Arrays;
  */
 public class Main {
 
-    private static Sort sort = new ShellSort();
+    private static Sort sort = null;
 
     public static void main( String[] args ) {
-        String s = "SHELLSORTEXAMPLE";
+        String s = "EEGMRACERT";
         String[] a = s.split("");
+        sort = new MergeSort(a.length);
         System.out.println("before sort:");
         Arrays.stream(a).forEach(k->{
             System.out.printf(k + "");
