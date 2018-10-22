@@ -51,6 +51,7 @@ public class MergeSort implements Sort {
 
     /**
      * 自顶向下的归并排序
+     * 时间复杂度 NlgN
      * @param a
      */
     @Override
