@@ -37,11 +37,35 @@ public class MergeSort implements Sort {
         }
     }
 
-    @Override
-    public void sort(Comparable[] a) {
+    /**
+     * 原地归并排序调用
+     * @param a
+     */
+    @Deprecated
+    public void inPlaceMergesort(Comparable[] a) {
         // TODO
         // 目前此排序方法并未完成
         int mid = (a.length - 1) / 2;
         merge(a, 0, mid, a.length - 1);
+    }
+
+    /**
+     * 自顶向下的归并排序
+     * @param a
+     */
+    @Override
+    public void sort(Comparable[] a) {
+        aux = new Comparable[a.length];
+        sort(a, 0, a.length - 1);
+    }
+
+    private void sort(Comparable[] a, int lo, int hi) {
+        if (hi <= lo) {
+            return;
+        }
+        int mid = lo + (hi - lo) / 2;
+        sort(a, lo, mid);
+        sort(a, mid + 1, hi);
+        merge(a,lo,mid,hi);
     }
 }
