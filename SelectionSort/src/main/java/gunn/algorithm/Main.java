@@ -11,7 +11,7 @@ public class Main {
     private static Sort sort = null;
 
     public static void main( String[] args ) {
-        String s = "EEGMRACERT";
+        String s = "MERGESORTEXAMPLE";
         String[] a = s.split("");
         sort = new MergeSort(a.length);
         System.out.println("before sort:");
