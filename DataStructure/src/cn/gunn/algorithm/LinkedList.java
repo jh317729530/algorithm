@@ -63,16 +63,16 @@ public class LinkedList<T> {
      * 反转链表 递归
      * @return
      */
-    public Node recursiveReverse(Node currentNode) {
-        if (currentNode.next == null) {
+
+    public Node recusiveReverse(Node currentNode) {
+        if (currentNode == null || currentNode.next == null) {
             return currentNode;
         }
-        Node nextNode = recursiveReverse(currentNode.next);
-        nextNode.next = currentNode;
-        if (currentNode == head) {
-            currentNode.setNext(null);
-        }
-        return currentNode;
+        Node next = currentNode.next;
+        Node newHead = recusiveReverse(next);
+        next.next = currentNode;
+        currentNode.next = null;
+        return newHead;
     }
 
     public static void main(String[] args) {
@@ -96,7 +96,7 @@ public class LinkedList<T> {
         }
 
         System.out.println("---------------reverse again----------------");
-        Node node = integerLinkedList.recursiveReverse(integerLinkedList.getHead());
+        Node node = integerLinkedList.recusiveReverse(integerLinkedList.getHead());
         while (node != null) {
             System.out.println(node.getT());
             node = node.next;
