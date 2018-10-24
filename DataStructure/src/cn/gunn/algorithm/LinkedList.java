@@ -64,12 +64,15 @@ public class LinkedList<T> {
      * @return
      */
     public Node recursiveReverse(Node currentNode) {
-        if (currentNode == null) {
-            return null;
+        if (currentNode.next == null) {
+            return currentNode;
         }
-        Node prevNode = recursiveReverse(currentNode.next);
-        currentNode.next = prevNode;
-        return currentNode.next;
+        Node nextNode = recursiveReverse(currentNode.next);
+        nextNode.next = currentNode;
+        if (currentNode == head) {
+            currentNode.setNext(null);
+        }
+        return currentNode;
     }
 
     public static void main(String[] args) {
